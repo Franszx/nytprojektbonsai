@@ -1,0 +1,132 @@
+---
+const { databowl } = Astro.props;
+---
+
+<div class="div1">
+  <a id="black" class="hover" href="/bowlProduct">
+    <figure><img src={databowl.imgsrc} alt={databowl.imgalt} /></figure>
+    <div class="padding">
+      <div class="overskrift">
+        <h3>{databowl.title}</h3>
+        <h3>{databowl.price}</h3>
+      </div>
+      <h5>{databowl.description}</h5>
+      <h5 id="varianter">{databowl.flere_varianter}</h5>
+    </div>
+  </a>
+
+  <style>
+    figure {
+      overflow: hidden;
+    }
+    .hover figure img {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-transition: 0.3s ease-in-out;
+      transition: 0.8s ease-out;
+    }
+    .hover:hover img,
+    .hover:focus img {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+    #varianter {
+      padding-top: 3%;
+      text-decoration: underline 1px;
+      text-decoration-color: rgb(190, 190, 190);
+    }
+    .padding {
+      padding: 2%;
+    }
+    #black {
+      color: var(--almost-black);
+    }
+    .overskrift {
+      padding-top: 1%;
+      padding-bottom: 2%;
+      display: flex;
+      justify-content: space-between;
+    }
+    h4 {
+      font-weight: var(--fw-p);
+    }
+    .div1 {
+      /* width: 100%; */
+      padding: 2%;
+      padding-bottom: 6%;
+    }
+    img {
+      width: 100%;
+    }
+    h3 {
+      color: var(--green);
+      font-family: var(--ff-cta);
+      font-weight: var(--fw-l);
+      font-size: var(--fs-p);
+      padding-bottom: 2px;
+    }
+
+    h3:nth-of-type(2) {
+      font-weight: var(--fw-m);
+    }
+
+    h5 {
+      color: var(--almost-black);
+      font-family: var(--ff-text);
+      font-size: var(--fs-xs);
+      font-weight: var(--fs-l);
+      line-height: 1.2;
+    }
+
+    @media (min-width: 530px) {
+      h3 {
+        font-size: var(--fs-4);
+      }
+
+      h3:nth-of-type(2) {
+        font-weight: var(--fw-m);
+      }
+
+      h5 {
+        font-size: var(--fs-p);
+      }
+    }
+    @media (min-width: 700px) {
+      .overskrift {
+        padding-top: 4%;
+        padding-bottom: 4%;
+      }
+      h3 {
+        font-size: var(--fs-p);
+      }
+
+      h5 {
+        font-size: var(--fs-xs);
+      }
+    }
+
+    @media (min-width: 880px) {
+      .div1 {
+        padding: 4%;
+        padding-bottom: 8%;
+      }
+      h3 {
+        font-size: var(--fs-n);
+      }
+
+      h5 {
+        font-size: var(--fs-sm);
+      }
+    }
+
+    @media (min-width: 1150px) {
+      h3 {
+        font-size: var(--fs-l);
+      }
+
+      h5 {
+        font-size: var(--fs-n);
+      }
+    }
+  </style>
+</div>

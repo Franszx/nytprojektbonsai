@@ -1,0 +1,354 @@
+---
+import BonsaibowlCard from "../components/BonsaibowlCard.astro";
+import Layout from "../layout/Layout.astro";
+import PlaceholderCard from "../components/PlaceholderCard.astro";
+
+const url = "https://bcjykukoxzsusmoltaky.supabase.co/rest/v1/bonsaipots";
+const api = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJjanlrdWtveHpzdXNtb2x0YWt5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODUwMTg3ODYsImV4cCI6MjAwMDU5NDc4Nn0.AD5gYYbHDUkLyrwBcKhI3TJgXTSqIj9SSYw9TvhA7kA";
+
+const databowl = await fetch(url, {
+  method: "GET",
+  headers: {
+    apikey: api,
+  },
+}).then((res) => res.json());
+console.log(databowl);
+---
+
+<Layout>
+  <main>
+    <section id="first_section">
+      <img id="img1" src="/img/bowl_topimg.webp" alt="" />
+      <img id="img2" src="/img/bowl_topimg_web.webp" alt="" /><div class="first_div">
+        <h1>Bonsaiskåle</h1>
+        <img class="gren" src="/img/gren.svg" alt="" />
+        <p>Her på siden finder du et udvalg af smukke bonsaiskåle. Vi har et bredt sortiment af både indendørs samt udendørs skåle. Skålene findes i mange farver og størrelser.</p>
+      </div>
+      <a href="#descript" id="orange" class="pilned"><img src="/img/pil.svg" alt="" /></a>
+    </section>
+    <section id="descript" class="section">
+      <h2>Bonsaiskåle uden underskål</h2>
+      <h3>Indendørs</h3>
+      <div class="div">
+        {
+          databowl.map((bowlcard) => {
+            return <BonsaibowlCard databowl={bowlcard} />;
+          })
+        }
+        <PlaceholderCard />
+        <PlaceholderCard />
+      </div>
+    </section>
+    <section class="section">
+      <h2>Bonsaiskåle med underskål</h2>
+      <h3>Udendørs</h3>
+      <div class="div">
+        <PlaceholderCard />
+        <PlaceholderCard />
+        <PlaceholderCard />
+        <PlaceholderCard />
+        <PlaceholderCard />
+        <PlaceholderCard />
+        <PlaceholderCard />
+        <PlaceholderCard />
+      </div>
+    </section>
+    <section class="section">
+      <h2>Japanske skåle</h2><h3></h3>
+      <div class="div">
+        <PlaceholderCard />
+        <PlaceholderCard />
+        <PlaceholderCard />
+        <PlaceholderCard />
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .pilned {
+    display: none;
+  }
+  #img2 {
+    display: none;
+  }
+  h1 {
+    font-size: var(--fs-2);
+    font-weight: var(--fw-l);
+    padding-top: 25px;
+    padding-bottom: 8px;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--ff-cta);
+    color: var(--green);
+    text-align: center;
+    font-weight: var(--fw-l);
+  }
+
+  h2 {
+    display: grid;
+    margin-inline: auto;
+    padding-top: 40px;
+    font-size: var(--fs-3);
+    text-align: center;
+    width: 250px;
+    padding-bottom: 5px;
+  }
+
+  h3 {
+    display: grid;
+    margin-inline: auto;
+    font-size: var(--fs-p);
+    text-align: center;
+    width: 250px;
+    padding-bottom: 20px;
+  }
+
+  .gren {
+    width: 120px;
+    display: block;
+    margin-inline: auto;
+  }
+
+  p {
+    color: var(--almost-black);
+    font-size: var(--fs-p);
+    font-family: var(--ff-text);
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  img {
+    width: 100vw;
+  }
+  .div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+
+  main section:nth-of-type(1) {
+    background-color: var(--white);
+  }
+
+  section:nth-of-type(2) {
+    background-color: var(--bg-grey);
+    padding-bottom: 50px;
+  }
+
+  section:nth-of-type(3) {
+    background-color: var(--white);
+    padding-bottom: 50px;
+  }
+
+  section:nth-of-type(4) {
+    background-color: var(--bg-grey);
+    padding-bottom: 50px;
+  }
+
+  @media (min-width: 700px) {
+    .gren {
+      width: 150px;
+    }
+    p,
+    h2,
+    h3 {
+      text-align: left;
+    }
+    h1 {
+      font-size: var(--fs-2);
+      font-weight: var(--fw-l);
+    }
+
+    h2 {
+      width: 100%;
+      padding-left: 5%;
+    }
+    h3 {
+      width: 100%;
+      padding-left: 5%;
+    }
+    #img1 {
+      display: none;
+    }
+
+    #img2 {
+      display: block;
+    }
+    .div {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      padding-left: 3%;
+      padding-right: 3%;
+    }
+
+    section:nth-of-type(1) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    section:nth-of-type(1) img {
+      grid-column: 2;
+    }
+
+    div:nth-of-type(1) {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .first_div {
+      display: block;
+      align-self: center;
+    }
+  }
+
+  @media (min-width: 880px) {
+    .section {
+      padding-top: 3%;
+    }
+    .div {
+      padding-top: 2%;
+    }
+    .gren {
+      width: 210px;
+    }
+
+    h1 {
+      font-size: var(--fs-1);
+    }
+    p {
+      font-size: var(--fs-n);
+    }
+
+    h2 {
+      font-size: var(--fs-3w);
+    }
+
+    h3 {
+      font-size: var(--fs-n);
+    }
+  }
+
+  @media (min-width: 980px) {
+    p {
+      width: 420px;
+      margin-inline: auto;
+    }
+  }
+
+  @media (min-width: 1150px) {
+    .gren {
+      padding-bottom: 20px;
+    }
+
+    .first_div {
+      margin-inline: auto;
+      width: 490px;
+    }
+
+    p {
+      width: 490px;
+      margin-inline: 0;
+    }
+    h1 {
+      font-size: var(--fs-2w);
+      padding-bottom: 15px;
+    }
+    p {
+      font-size: var(--fs-n);
+    }
+
+    h2 {
+      font-size: var(--fs-2);
+    }
+
+    h3 {
+      font-size: var(--fs-4);
+    }
+  }
+
+  @media (min-width: 1300px) {
+    .first_section {
+      position: relative;
+    }
+    .pilned {
+      display: block;
+    }
+
+    #orange img {
+      width: 3vw;
+    }
+    #orange {
+      position: absolute;
+      display: block;
+      /* padding-top: 1.5vw; */
+      top: 500px;
+      left: 48.5%;
+      z-index: 1;
+      animation: move 3s infinite;
+    }
+
+    @keyframes move {
+      0% {
+        transform: translateY(0);
+      }
+
+      60% {
+        transform: translateY(0);
+        animation-timing-function: ease-out;
+      }
+
+      70% {
+        transform: translateY(2vw);
+        animation-timing-function: ease-out;
+      }
+      80% {
+        transform: translateY(0.5vw);
+        animation-timing-function: ease-in;
+      }
+
+      90% {
+        transform: translateY(2vw);
+        animation-timing-function: ease-out;
+      }
+
+      100% {
+        transform: translateY(0);
+        animation-timing-function: ease-out;
+      }
+    }
+  }
+
+  @media (min-width: 1450px) {
+    .section {
+      padding-left: 8%;
+      padding-right: 8%;
+    }
+    #orange {
+      top: 530px;
+    }
+  }
+
+  @media (min-width: 1550px) {
+    #orange {
+      top: 550px;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    #orange {
+      top: 590px;
+    }
+  }
+
+  @media (min-width: 1800px) {
+    #orange {
+      top: 650px;
+    }
+  }
+</style>

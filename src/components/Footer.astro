@@ -1,0 +1,104 @@
+---
+---
+
+<footer>
+  <div class="foot_1">
+    <a href="/">Hjem</a>
+    <a href="/shop/">Shop</a>
+    <a href="#">Handelsbetingelser</a>
+    <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+  </div>
+  <div class="foot_2">
+    <div>
+      <img src="/img/location.svg" alt="" />
+      <p>Ålekistevej 63, 2720 Vanløse</p>
+    </div>
+    <div>
+      <img src="/img/phone.svg" alt="" />
+      <a href="tel:50548062">50548062</a>
+      <p>(kun i butikkens åbningstider)</p>
+    </div>
+    <div>
+      <img src="/img/mail.svg" alt="" />
+      <a href="mailto:info@bonsaihjoernet.dk">info@bonsaihjoernet.dk</a>
+    </div>
+  </div>
+  <div class="foot_3">
+    <p>Åbningstider</p>
+    <p>Tirsdag-Fredag: 15-18</p>
+    <p>Lørdag: 12-15</p>
+  </div>
+  <p class="designers">Designed by Grønne, Grønborg og Lindberg</p>
+</footer>
+
+<style>
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--almost-black);
+    background-image: url(/img/footer_chalk.webp);
+    background-size: cover;
+    color: var(--white-text);
+    font-family: var(--ff-text);
+    font-weight: 400;
+    font-size: var(--fs-sm);
+  }
+  a {
+    color: var(--white);
+  }
+  footer > * > * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  footer > div {
+    margin-top: var(--space-md);
+  }
+
+  .foot_2 div {
+    margin-top: var(--space-xxs);
+  }
+  .foot_2 div:first-child {
+    margin-top: 0;
+  }
+  footer div:not(:has(img)) > * {
+    margin-top: var(--space-xxs);
+  }
+  .foot_3 {
+    margin-bottom: var(--space-md);
+  }
+  .designers {
+    font-size: 10px;
+    color: #c1ac93;
+    opacity: 60%;
+  }
+  @media (min-width: 750px) {
+    footer {
+      position: relative;
+      background-image: url(/img/footer_chalk_web.webp);
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-content: center;
+      align-items: center;
+      padding-top: var(--space-md);
+      padding-bottom: var(--space-xl);
+      font-size: var(--fs-n);
+    }
+    .foot_2 div:nth-child(2) p:first-of-type {
+      font-size: var(--fs-sm);
+    }
+    .designers {
+      position: absolute;
+      bottom: 0;
+      align-self: end;
+      justify-self: center;
+      margin-top: var(--space-md);
+      margin-bottom: var(--space-xs);
+      font-size: var(--fs-sm);
+    }
+    .foot_3 {
+      /* margin-top: var(--space-xl); */
+    }
+  }
+</style>

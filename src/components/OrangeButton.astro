@@ -1,0 +1,25 @@
+---
+const { link, linktext } = Astro.props;
+---
+
+<a href={link}>{linktext}</a>
+
+<style>
+  a {
+    background-color: var(--accent);
+    color: var(--white);
+    font-family: var(--ff-cta);
+    font-size: var(--fs-n);
+    font-size: 14px;
+    font-weight: var(--fw-n);
+    padding-block: 10px;
+    padding-inline: 14px;
+  }
+  @media (min-width: 750px) {
+    a {
+      font-size: var(--fs-n);
+      padding-block: 12px;
+      padding-inline: 18px;
+    }
+  }
+</style>

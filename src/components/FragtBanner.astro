@@ -1,0 +1,61 @@
+---
+---
+
+<div>
+  <p>Køb for mere end DKK 1000,- og få fri fragt</p>
+  <p>Alle træer skal afhentes i butikken</p>
+</div>
+
+<style>
+  div {
+    position: sticky;
+    display: grid;
+    top: 100px;
+    height: 16px;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--green);
+    color: var(--white-text);
+    font-size: var(--fs-sm);
+    font-family: var(--ff-text);
+    font-weight: 300;
+    place-content: center;
+    z-index: 50;
+  }
+  p {
+    position: relative;
+    display: block;
+    text-align: center;
+    top: 8px;
+    height: 100%;
+    animation: bannerswitch 8s infinite alternate;
+  }
+  @keyframes bannerswitch {
+    0% {
+      transform: translateY(0%);
+    }
+
+    45% {
+      transform: translateY(0%);
+      animation-timing-function: ease-out;
+    }
+    50% {
+      transform: translateY(-103%);
+      animation-timing-function: ease-in-out;
+    }
+
+    100% {
+      transform: translateY(-103%);
+    }
+  }
+
+  @media (min-width: 750px) {
+    div {
+      height: 19px;
+      font-size: var(--fs-n);
+    }
+    p {
+      top: 10px;
+    }
+  }
+</style>

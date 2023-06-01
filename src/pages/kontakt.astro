@@ -1,0 +1,231 @@
+---
+import Layout from "../layout/Layout.astro";
+---
+
+<Layout title="Kontakt">
+  <main>
+    <section class="firstsec">
+      <div class="image_container">
+        <img class="splashimage" src="/img/kontakt_tree.webp" alt="Baggrundsbillede af et træ" />
+      </div>
+      <div class="rightside">
+        <h1>Kontakt</h1>
+        <p>Hos Bonsaihjørnet værdsætter vi dine spørgsmål, kommentarer og feedback. Vi er her for at sikre, at din oplevelse med os er så positiv og behagelig som muligt.</p>
+        <p>Har du spørgsmål om vores produkter, pasningsvejledninger eller noget andet relateret til bonsaitræer, så er du mere end velkommen til at kontakte os. Vi står klar til at hjælpe dig.</p>
+      </div>
+    </section>
+    <section class="SoMe">
+      <h2>Sociale Medier</h2>
+      <p>Vi vil også gerne opfordre dig til at følge os på vores facebookside, hvor du kan deltage i vores bonsai-fællesskab, få opdateringer om nye produkter og lære mere om pleje og vedligeholdelse af dine bonsaitræer.</p>
+      <a href="https://www.facebook.com/"><img src="/img/f_logo.png" alt="Link til facebook" /></a>
+    </section>
+    <section class="kontaktinfo">
+      <div>
+        <p>Telefon: +50 54 80 62</p>
+        <p>(Vi besvarer kun i butikkens åbningstid)</p>
+        <p>E-mail: info@bonsaihjørnet.dk</p>
+      </div>
+      <div>
+        <p>Åbningstider:</p>
+        <p>Tirsdag-Fredag: 15-18</p>
+        <p>Lørdag: 12-15</p>
+      </div>
+      <p>Vi bestræber os altid på at besvare alle henvendelser inden for en rimelig tidsramme.</p>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .image_container {
+    display: grid;
+    width: 100%;
+    height: 230px;
+    border-bottom: 2px solid var(--green);
+  }
+  .splashimage {
+    height: 228px;
+    object-fit: fill;
+    justify-self: center;
+    align-self: end;
+  }
+  h1,
+  h2 {
+    font-family: var(--ff-cta);
+    color: var(--green);
+    font-weight: var(--fw-l);
+  }
+  p {
+    color: var(--almost-black);
+    font-family: var(--ff-text);
+  }
+  p {
+    font-size: var(--fs-p);
+    line-height: 1.4;
+    max-width: 80vw;
+    text-align: center;
+    margin-block: var(--space-xs);
+  }
+  h1 {
+    font-size: var(--fs-2);
+    margin-block: var(--space-sm);
+    text-align: center;
+  }
+  h2 {
+    font-size: var(--fs-3);
+    margin-block: var(--space-sm);
+  }
+  section {
+    padding-block: var(--space-sm);
+    display: grid;
+    justify-items: center;
+  }
+  .SoMe {
+    background: var(--bg-grey);
+  }
+  .SoMe a {
+    width: 70px;
+    margin-block: var(--space-sm);
+  }
+  .SoMe img {
+    width: inherit;
+  }
+  .kontaktinfo div p {
+    margin-block: var(--space-xxs);
+  }
+  .kontaktinfo div {
+    margin-block: var(--space-xxs);
+  }
+  @media (width > 750px) {
+    .firstsec {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      padding-inline: auto;
+      gap: var(--space-lg);
+      border-bottom: 2px solid var(--green);
+      padding-block: 0;
+    }
+    .rightside {
+      align-self: center;
+    }
+    .rightside p {
+      /* font-size: 18px; */
+      max-width: 45ch;
+      line-height: 1.6;
+      padding-right: var(--space-md);
+    }
+    .image_container {
+      display: grid;
+      width: 100%;
+      height: 80vh;
+      border-bottom: none;
+    }
+    .splashimage {
+      height: inherit;
+      object-fit: cover;
+      opacity: 0.8;
+      /* align-self: end; */
+      /* object-position: bottom left; */
+    }
+    p {
+      font-size: var(--fs-n);
+      line-height: 1.4;
+      text-align: start;
+      margin-block: var(--space-xs);
+    }
+    h1 {
+      font-size: var(--fs-2w);
+      margin-block: var(--space-sm);
+      text-align: start;
+    }
+    h2 {
+      font-size: var(--fs-3w);
+      margin-block: var(--space-sm);
+    }
+    section {
+      padding-block: var(--space-sm);
+      display: grid;
+      justify-items: start;
+    }
+    .SoMe {
+      display: grid;
+      grid-template-columns: max(35vw, 450px) max(25vw, 350px);
+      grid-template-rows: 1fr 2fr 1fr;
+      justify-content: center;
+      gap: var(--space-md);
+      padding-bottom: 0;
+      background: var(--bg-grey);
+    }
+    .SoMe h2 {
+      align-self: end;
+      margin-bottom: 0;
+    }
+    .SoMe p {
+      grid-area: 2/1/3/2;
+      align-self: center;
+    }
+    .SoMe a {
+      width: 120px;
+      margin-block: 0;
+      grid-area: 2/2/3/3;
+      align-self: center;
+      justify-self: center;
+    }
+    .kontaktinfo div p {
+      margin-block: var(--space-xxs);
+    }
+    .kontaktinfo div {
+      margin-block: var(--space-xxs);
+    }
+    .kontaktinfo {
+      display: grid;
+      justify-content: center;
+      grid-template-columns: max(35vw, 450px) max(25vw, 350px);
+      gap: var(--space-md);
+      /* background: var(--bg-grey); */
+    }
+    .kontaktinfo div:nth-child(2) {
+      margin-block: 0;
+      grid-area: 1/2/3/3;
+      align-self: center;
+      justify-self: center;
+    }
+  }
+  @media (750px < width < 930px) {
+    .SoMe,
+    .kontaktinfo {
+      grid-template-columns: max(35vw, 350px) max(25vw, 250px);
+      gap: var(--space-md);
+      padding-bottom: 0;
+    }
+  }
+  @media (750px < width < 1190px) {
+    .firstsec {
+      grid-template-columns: 3fr 2fr;
+      gap: var(--space-sm);
+    }
+    .image_container {
+      width: 100%;
+      height: 60vh;
+    }
+    .splashimage {
+      height: inherit;
+      object-fit: cover;
+      /* align-self: end; */
+      /* object-position: bottom left; */
+    }
+    h1 {
+      font-size: calc(var(--fs-1) * 0.9);
+    }
+  }
+  @media (500px < width < 750px) {
+    h1 {
+      text-align: center;
+    }
+    .splashimage {
+      justify-self: center;
+      object-fit: cover;
+      /* align-self: end; */
+      /* object-position: bottom left; */
+    }
+  }
+</style>

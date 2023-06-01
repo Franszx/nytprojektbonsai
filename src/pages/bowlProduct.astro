@@ -1,0 +1,415 @@
+---
+import Layout from "../layout/Layout.astro";
+---
+
+<Layout>
+  <main>
+    <div class="carousel">
+      <div class="carousel__track-container">
+        <ul class="carousel__track">
+          <li class="carousel__slide current-slide">
+            <img class="carousel__image" src="/img/potproduct1.webp" alt="" />
+          </li>
+          <li class="carousel__slide">
+            <img class="carousel__image" src="/img/potproduct2.webp" alt="" />
+          </li>
+          <li class="carousel__slide">
+            <img class="carousel__image" src="/img/potproduct3.webp" alt="" />
+          </li>
+          <li class="carousel__slide">
+            <img class="carousel__image" src="/img/potproduct4.webp" alt="" />
+          </li>
+        </ul>
+      </div>
+      <button class="carousel__button carousel__button--left is-hidden"
+        ><img src="/img/left.svg" alt="" /></button
+      >
+      <button class="carousel__button carousel__button--right"
+        ><img src="/img/right.svg" alt="" /></button
+      >
+
+      <div class="carousel__nav">
+        <button class="carousel__indicator current-slide"></button>
+        <button class="carousel__indicator"></button>
+        <button class="carousel__indicator"></button>
+        <button class="carousel__indicator"></button>
+      </div>
+    </div>
+    <div class="grid_1-1">
+    <div class="grid">
+        <img id="big_img" src="/img/potproduct1.webp" alt="">
+        <div class="flex">
+            <img class="work" src="/img/potproduct2.webp" alt="">
+        <img class="work" src="/img/potproduct3.webp" alt="">
+        <img class="work" src="/img/potproduct4.webp" alt=""></div>
+    </div>
+    <section>
+      <h1>Kawaguchiskål</h1>
+      <p id="p1">
+        Rund bonsaiskål dyppet i koboltblå glasur. Skålen har et helt særligt
+        udtryk, da farven changerer smukt i lys.
+      </p>
+
+      <div class="size">
+        <p id="displayed_price">79,00 DKK</p>
+        <p id="displayed_size">Størrelse: S (17cm x 13,5cm x 8,5cm)</p>
+      </div>
+      <p>Vælg størrelse:</p>
+      <form action="">
+        <select name="size" id="size">
+          <option value="1">- SMALL -</option>
+          <option value="2">- MEDIUM -</option>
+          <option value="3">- LARGE -</option>
+        </select>
+        <button type="submit">- LÆG I KURV -</button>
+      </form>
+      <p id="p2"><span> OBS:</span> hvis du har shoppet bonsai træer (og trykket “AFHENTNING I BUTIK”): ønsker du at købe andre produkter, kan vi efter ønske pakke og sende de andre varer.
+    </p>
+    <p><span> Produktbeskrivelse</span><br>
+        Bonsai skålen har en smuk blå glasur, som changerer i lyset. Det giver skålen et helt særligt udtryk. Skålen er fremragende til bonsaitræer grundet den lave højde, som begrænser rødderne i at gro (hvilket man ønsker for bonsai træer). Derudover er der hul i bunden, så overskydende vand kan løbe fra.</p>
+    </section></div>
+    <a href="/bonsaibowls/"><img src="/img/greenarrow.svg" alt="" />TILBAGE TIL BONSAISKÅLE</a>
+  </main>
+</Layout>
+
+<style>
+.grid, a{display: none;}
+    #p1{padding-bottom: 6%;}
+
+    #p2{padding-top: 11%;
+    padding-bottom: 11%;
+font-size: var(--fs-sm);}
+
+    .size{padding-bottom: 5%;}
+h1{font-size: var(--fs-2);
+font-family: var(--ff-cta);
+color: var(--green);
+font-weight: var(--fw-l);
+padding-bottom: 16px;}
+
+p{
+    font-family: var(--ff-text);
+    font-size: var(--fs-p);
+
+}
+
+span{
+    font-weight: 600;
+    color: var(--almost-black);
+}
+
+section{display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+padding-left: 8%;
+padding-right: 8%;
+padding-top: 8%;
+padding-bottom: 8%;
+}
+
+#displayed_price{font-size: var(--fs-4);
+    font-family:
+font-weight: ;}
+
+/*knap*/
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+  form > * {
+    font-family: var(--ff-cta);
+    font-weight: var(--fw-n);
+    font-size: var(--fs-n)
+    width: 150px;
+    width: 11rem;
+    text-align: center;
+  }
+  form select {
+    border: 2px solid var(--green);
+    padding-block: var(--space-xxs);
+  }
+  select:focus-visible {
+  outline: none;
+}
+  form button {
+    background-color: var(--green);
+    color: var(--white);
+    border: none;
+    padding-block: calc(var(--space-xs)*.8);
+  }
+  form select:hover, form button:hover {
+  cursor: pointer;
+}
+
+/*slider*/
+  .carousel {
+    position: relative;
+    height: 320px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
+
+  .carousel__image {
+    /* width: 100%; */
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /* object-position: center; */
+  }
+
+  .carousel__track-container {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .carousel__track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    height: 100%;
+    transition: transform 250ms ease-in;
+  }
+
+  .carousel__slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .carousel__button {
+    position: absolute;
+    top: 332px;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .carousel__button--left {
+    left: 25%;
+  }
+  .carousel__button--right {
+    right: 25%;
+  }
+  .carousel__button img {
+    width: 30px;
+  }
+
+  .carousel__nav {
+    display: flex;
+    justify-content: center;
+    padding: 13px;
+  }
+
+  .carousel__indicator {
+    border: 0;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+
+    background-color: var(--green);
+    opacity: 30%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+
+  .carousel__indicator.current-slide {
+    background-color: var(--green);
+    opacity: 100%;
+  }
+
+  .is-hidden {
+    display: none;
+  }
+
+
+
+  @media (min-width: 825px) {
+.work{width: 50%;
+height: 40%;
+object-fit: cover;}
+
+    main{padding-left: 6%;
+    padding-right: 6%;
+padding-top: 4%;
+overflow: hidden;}
+
+    .grid_1-1{display: grid;
+    grid-template-columns: 1fr 1fr;
+height: 90vh;}
+
+#big_img{place-self: end;
+min-width: 360px;
+padding-top: 0;}
+.grid{display: grid;
+grid-template-rows: 1fr 1fr;
+padding: 0 10% 0% 12%}
+
+img{padding: 1%}
+.flex{display: flex;
+grid-row: 2;
+justify-content: space-between;
+}
+.flex img{
+padding-top: 2%;}
+
+a{position: relative;
+display: flex;
+gap: var(--space-xs);
+font-family: var(--ff-cta);
+color: var(--green);
+align-items: center;
+left: 13%;
+top: -15px;
+}
+section{padding-top: 2%;
+    padding-bottom: 0;
+text-align: start;
+align-items: flex-start;
+padding-left: 10%;;
+}
+
+.carousel{display: none;}
+  }
+
+  @media (min-width: 1110px) { h1{font-size: var(--fs-2w);}
+
+p{font-size: var(--fs-n);}
+}
+
+@media (min-width: 1450px) {
+    .grid_1-1{height: 92vh;}
+
+a{top: 0;}
+
+main{padding-bottom: 3%;}
+}
+
+</style>
+
+
+<script>
+    //JS på størrelse
+    window.addEventListener("load", pricing);
+
+    function pricing() {
+    const priceElement = document.getElementById("displayed_price");
+    const sizeElement = document.getElementById("displayed_size");
+    const sizeSelect = document.getElementById("size") as HTMLSelectElement;
+
+    // Priserne/alderen for de forskellige valgmuligheder defineres i et array
+    const prices = {
+      "1": "79,00 DKK",
+      "2": "269,00 DKK",
+      "3": "399,00 DKK"
+    };
+    const sizes = {
+      "1": "Størrelse: S (17cm x 13,5cm x 8,5cm)",
+      "2": "Størrelse: M (23cm x 18,5cm x 8,5cm)",
+      "3": "Størrelse: L (31cm x 27cm x 8,5cm)"
+    };
+
+    // Funktion som updaterer den viste pris/alder
+    function updatePrice() {
+      const selectedOption = sizeSelect.value;
+      const price = prices[selectedOption];
+      const size = sizes[selectedOption];
+      priceElement.textContent = price;
+      sizeElement.textContent = size;
+    }
+
+    // Tilføjer eventListener når der vælges en ny alder
+    sizeSelect.addEventListener("change", updatePrice);
+    sizeSelect.addEventListener("change", updatePrice);
+    }
+  </script>
+
+<script>
+//JS på slider
+  const track = document.querySelector(".carousel__track") as HTMLElement;
+  const slides = Array.from(track.children);
+  const nextButton = document.querySelector(".carousel__button--right");
+  const prevButton = document.querySelector(".carousel__button--left");
+  const dotsNav = document.querySelector(".carousel__nav");
+  const dots = Array.from(dotsNav.children);
+
+  const slideWidth = slides[0].getBoundingClientRect().width;
+
+  const setSlidePosition = (slide: HTMLElement, index: number) => {
+    slide.style.left = slideWidth * index + "px";
+  };
+
+  slides.forEach(setSlidePosition);
+
+  const moveToSlide = (track, currentSlide, targetSlide) => {
+    track.style.transform = `translateX(-${parseFloat(
+      targetSlide.style.left
+    )}px)`;
+    currentSlide.classList.remove("current-slide");
+    targetSlide.classList.add("current-slide");
+  };
+
+  const updateDots = (currentDot, targetDot) => {
+    currentDot.classList.remove("current-slide");
+    targetDot.classList.add("current-slide");
+  };
+
+  const hideShowArrows = (slides, prevButton, nextButton, targetIndex) => {
+    if (targetIndex === 0) {
+      prevButton.classList.add("is-hidden");
+      nextButton.classList.remove("is-hidden");
+    } else if (targetIndex === slides.length - 1) {
+      prevButton.classList.remove("is-hidden");
+      nextButton.classList.add("is-hidden");
+    } else {
+      prevButton.classList.remove("is-hidden");
+      nextButton.classList.remove("is-hidden");
+    }
+  };
+
+  //when i click left, move slides to the left
+  prevButton.addEventListener("click", (e) => {
+    const currentSlide = track.querySelector(".current-slide") as HTMLElement;
+    const prevSlide = currentSlide.previousElementSibling as HTMLElement;
+    const currentDot = dotsNav.querySelector(".current-slide");
+    const prevDot = currentDot.previousElementSibling;
+    const prevIndex = slides.findIndex((slide) => slide === prevSlide);
+    moveToSlide(track, currentSlide, prevSlide);
+    updateDots(currentDot, prevDot);
+    hideShowArrows(slides, prevButton, nextButton, prevIndex);
+  });
+
+  //when i click right, move slides to the right
+  nextButton.addEventListener("click", (e) => {
+    const currentSlide = track.querySelector(".current-slide") as HTMLElement;
+    const nextSlide = currentSlide.nextElementSibling as HTMLElement;
+    const currentDot = dotsNav.querySelector(".current-slide");
+    const nextDot = currentDot.nextElementSibling;
+    const nextIndex = slides.findIndex((slide) => slide === nextSlide);
+    moveToSlide(track, currentSlide, nextSlide);
+    updateDots(currentDot, nextDot);
+    hideShowArrows(slides, prevButton, nextButton, nextIndex);
+  });
+
+  //when i click the nav indicators, move to that slide
+  dotsNav.addEventListener("click", (e) => {
+    // what indicator was clicked on?
+    const targetDot = (e.target as HTMLElement).closest("button");
+
+    if (!targetDot) return;
+
+    const currentSlide = track.querySelector(".current-slide");
+    const currentDot = dotsNav.querySelector(".current-slide");
+    const targetIndex = dots.findIndex((dot) => dot === targetDot);
+    const targetSlide = slides[targetIndex];
+
+    moveToSlide(track, currentSlide, targetSlide);
+    updateDots(currentDot, targetDot);
+    hideShowArrows(slides, prevButton, nextButton, targetIndex);
+  });
+</script>

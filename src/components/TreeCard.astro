@@ -1,0 +1,102 @@
+---
+const { data , size} = Astro.props;
+---
+
+<div data-size={size}>
+  <a class="hover" href="/japanskLigusterTree/">
+    <figure>
+      <img src={data.imgsrc} alt={data.imgalt} />
+    </figure>
+    <h3>{data.title}</h3>
+    <h4>{data.latin}</h4>
+    <h5>{data.description}</h5></a>
+</div>
+
+<style>
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    color: var(--almost-black);
+  }
+
+  figure {
+    overflow: hidden;
+  }
+  .hover figure img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .8s ease-out;
+}
+.hover:hover img, .hover:focus img {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+  h3,
+  h4 {
+    color: var(--green);
+    font-family: var(--ff-cta);
+    font-weight: var(--fw-l);
+  }
+  h5 {
+    font-family: var(--ff-text);}
+  h3 {
+    font-size: var(--fs-3);
+    }
+  h4 {
+    font-size: var(--fs-4);
+  }
+  h5 {
+    color: var(--almost-black);
+    font-size: var(--fs-p);
+    font-weight: var(--fs-l);
+    align-self: center;
+    text-align: center;
+    line-height: 1.4;
+    max-width: 80vw;
+  }
+
+  @media (width > 750px) {
+    [data-size="small"] h3 {
+font-size: var(--fs-4w);
+    }
+    [data-size="small"] h4 {
+font-size: calc(var(--fs-4w)*.7);
+    }
+    a, h3, h4 {
+      text-align: start;
+      align-self:start;
+    }
+    h3 {
+      font-size: var(--fs-3w);
+    }
+    h4 {
+      font-size: var(--fs-4w);
+    }
+    h5 {
+      font-size: var(--fs-n);
+      text-align: start;
+      line-height: 1.4;
+      /* max-width: 33ch; */
+    }
+    h3,
+    h4,
+    h5 {
+      padding-inline: var(--space-xs);
+    }
+  }
+  @media (750px < width < 1175px) {
+    h5 {
+    font-size: 14px;
+  }
+
+  @media (500px < width < 750px) {
+  }
+</style>

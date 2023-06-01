@@ -1,0 +1,514 @@
+---
+import OrangeButton from "../components/OrangeButton.astro";
+import Layout from "../layout/Layout.astro";
+import TreeCard from "../components/TreeCard.astro";
+const url = "https://bcjykukoxzsusmoltaky.supabase.co/rest/v1/bonsaitrees";
+const api = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJjanlrdWtveHpzdXNtb2x0YWt5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODUwMTg3ODYsImV4cCI6MjAwMDU5NDc4Nn0.AD5gYYbHDUkLyrwBcKhI3TJgXTSqIj9SSYw9TvhA7kA";
+
+const data = await fetch(url, {
+  method: "GET",
+  headers: {
+    apikey: api,
+  },
+}).then((res) => res.json());
+console.log(data);
+---
+
+<Layout title="Japansk Liguster">
+  <main>
+      <section class="buy">
+        <img id="splash" src="/img/treeart_liguster.webp" alt="Flot Ligustertræ">
+      <div class="leftside">
+        <div class="first_div">
+        <h1>Japansk Liguster</h1>
+        <h4>"Ligustrum Japonicum"</h4>
+        <p>Japansk liguster, er en populær bonsai-art, der stammer fra Japan. Det tilhører olivenfamilien og er hjemmehørende i Østasien, herunder Japan, Kina og Korea.</p>
+      </div>
+
+      <div class="price">
+        <p id="displayed_price">299,00 DKK</p>
+        <p id="displayed_age">Alder: 5 år</p>
+      </div>
+      <form action="">
+        <select name="age" id="age">
+          <option value="5">- 5 år -</option>
+          <option value="8">- 8 år -</option>
+          <option value="13">- 13 år -</option>
+        </select>
+        <button type="submit">- LÆG I KURV -</button>
+      </form>
+      <div class="info">
+        <p>Bonsaitræer vælges på baggrund af alder. Et ældre træ er typisk lidt større (og nemmere at passe), da det har haft længere tid til at udvokse.</p>
+        <p>OBS: planter kan pt kun bestilles til “AFHENTNING I BUTIK” og skal afhentes i butikken Ålekistevej 63.</p>
+        <p>Husk at tryk : “AFHENTNING I BUTIK” ved køb af planter. Hvis planten købes sammen med andre varer kan vi efter ønske pakke og sende de andre varer.</p>
+      </div>
+      <a href="/bonsaitrees/"><img src="/img/greenarrow.svg" alt="" />TILBAGE TIL BONSAITRÆER</a></div>
+    </section>
+    <a href="#descript" id="orange" class="pilned"><img src="/img/pil.svg" alt="" /></a>
+    <section id="descript" class="description">
+      <article class="art1">
+        <h2>Beskrivelse</h2>
+        <p>
+          Japansk liguster bonsaitræer har en lang historie inden for bonsai-dyrkning. Bonsai som kunstform har rødder i Kina og blev senere adopteret og forfinet af japanske mestre. Traditionen med at dyrke og forme japanske ligustrum-bonsaitræer
+          har udviklet sig i løbet af århundreder og er blevet dybt forankret i japansk kultur og æstetik.
+        </p>
+        <div class="imgs">
+            <img src="/img/beskrivelse2.webp" alt="Billede af et Japansk Liguster i solskin" />
+            <img src="/img/beskrivelse.webp" alt="Billede af et andet Japansk Liguster i flotte omgivelser" />
+        </div>
+        <p>
+          Japansk liguster er kendt for sine små, mørkegrønne blade og forgrenede struktur, hvilket gør den velegnet til bonsai-dyrkning. Bladene er læderagtige og elliptiske i form, og de skaber et kompakt og fyldigt løvmasse, når træet dyrkes og
+          formes som en bonsai.
+        </p>
+      </article>
+      <article class="art2">
+        <h2>Kendetegn</h2>
+        <p>
+          Japansk liguster bonsaitræer er ofte kendt for deres evne til at danne tætte og komplekse netværk af grene og for at udvikle karakteristiske luftrødder. Bonsai-kunstnere bruger præcise beskæringsteknikker og træning for at forme træet i
+          ønskede stilarter som den formelle opstammede stil eller den naturlige, mere vildtvoksende stil.
+        </p>
+        <img src="/img/beskrivelse2.webp" alt="Billede af et Japansk Liguster i solskin" />
+        <p>
+          Japanske liguster bonsaitræer udstråler en følelse af elegance, ro og balance. De er ofte udstillet i bonsai-udstillinger og beundres for deres skønhed og den dybe forbindelse, de har med naturen. Ligustrum japonicum-bonsaitræer
+          symboliserer også styrke, vedholdenhed og visdom, da de kan blive gamle og udvikle karakter og patina gennem årene med omhyggelig pleje og træning.
+        </p>
+      </article>
+      </section>
+      <section class="description2">
+      <article class="art3">
+        <h2>Beskæring</h2>
+        <img src="/img/beskæring.webp" alt="Billede af bonsaitræ der klippes til" />
+            <p>Nye skud kan med fordel beskæres når der er vokset en 5-6 bladpar frem. Klip tilbage til 1-3 bladpar. Større grene kan fjernes hele året.</p>
+      </article>
+      <article class="art4">
+        <h2>Placering</h2>
+        <img src="/img/placering.webp" alt="Billede af bonsaitræ placeret i flotte omgivelser" />
+        <p>
+          Japansk liguster trives bedst i et vindue med direkte sol. Gerne et vindue med sol hele dagen men ellers et vindue med enten morgen- eller aftensol. Indendørs bør planten have så meget lys som muligt. Udendørs kan planten godt få
+          svedne/rødlige blade, hvis den står direkte i solen.
+        </p>
+      </article>
+      <article class="art5">
+        <h2>Vanding</h2>
+        <img src="/img/vanding.webp" alt="Billede af træ der vandes" />
+        <p>
+          Mærk med en finger på jorden om den er tør, hvis det er tilfældet så skal planten vandes. Tjek dagligt med fingeren og overbrus den i stedet for at vande i skålen(der er hul i bunden af skålen, hvilket gør overbrusning let). Japansk
+          liguster vil hænge med bladene når den mangler vand. Den rejser sig dog hurligt igen når den bliver vandet.
+        </p>
+      </article>
+      <article class="art6">
+        <h2>Ompotning</h2>
+        <img src="/img/ompotning.webp" alt="Billede af en nyplantet spire" />
+        <p>
+          Marts til maj. Vær lidt forsigtig når du ompotter. Vi anbefaler at planten beskæres så kraftigt som muligt ca. 14 dage før ompotning. Japansk liguster bør overbruses dagligt med forstøver de første 1-2 uger efter ompotning. Dette vil
+          minimere bladtabet.
+        </p>
+      </article>
+    </section>
+      <div class="orange_b">
+        <OrangeButton link="/bonsaitrees/" linktext="TILBAGE TIL BONSAITRÆER" />
+    </div>
+  </main>
+</Layout>
+
+
+<style>
+#orange {
+  display: none;
+  }
+
+  /* --- General styling --- */
+  main {
+    display: grid;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--green);
+    font-family: var(--ff-cta);
+    font-weight: var(--fw-l);
+  }
+  p {
+    color: var(--almost-black);
+    font-family: var(--ff-text);
+    font-size: var(--fs-p);
+    text-align: center;
+  }
+  section {
+    /* align-self: center; */
+    margin-top: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  section div {
+    display: grid;
+    justify-items: center;
+  }
+  section p {
+    max-width: 80vw;
+    line-height: 1.4;
+  }
+
+  /*  --- First section ---  */
+.buy > img:first-child {
+    opacity: .8;
+    border-bottom: solid 2px var(--green);
+    margin-bottom: var(--space-sm);
+  }
+  h1 {
+    font-size: calc(var(--fs-2) * 1.2);
+  }
+  h4 {
+    font-size: var(--fs-4);
+  }
+  h1 + h4 {
+    margin-block: var(--space-xs);
+  }
+  .price {
+    margin-block: var(--space-sm);
+  }
+  .price p:first-child {
+    font-size: var(--fs-3);
+    font-family: var(--ff-cta);
+  }
+  .price p:last-child {
+    font-size: var(--fs-n);
+    /* font-size: 18px; */
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+  form > * {
+    font-family: var(--ff-cta);
+    font-weight: var(--fw-n);
+    font-size: var(--fs-n)
+    width: 150px;
+    width: 11rem;
+    text-align: center;
+  }
+  form select {
+    border: 2px solid var(--green);
+    padding-block: var(--space-xxs);
+  }
+  select:focus-visible {
+  outline: none;
+}
+form :is(select, button):hover {
+  cursor: pointer;
+}
+  form button {
+    background-color: var(--green);
+    color: var(--white);
+    border: none;
+    padding-block: calc(var(--space-xs)*.8);
+  }
+  .info {
+    margin-block: var(--space-lg);
+  }
+  .info :not(p:last-child) {
+    margin-bottom: var(--space-sm);
+  }
+  .buy a:first-of-type {
+    display: flex;
+    gap: var(--space-xs);
+    font-family: var(--ff-cta);
+  }
+
+
+  /* --- Tree description --- */
+  article {
+    display: grid;
+    justify-items: center;
+    width: 100%;
+    padding-block: var(--space-sm);
+  }
+  article:nth-of-type(2n + 1) {
+    background-color: var(--bg-grey);
+  }
+  article:last-of-type:not(.art2) {
+    background-color: var(--white);
+  }
+  h2 {
+    font-size: var(--fs-2);
+    margin-bottom: var(--space-sm);
+  }
+  article > :not(:last-child) {
+    margin-bottom: var(--space-sm);
+  }
+  article img {
+    max-width: 90vw;
+  }
+  .art1 img:nth-of-type(1) {
+    display: none;
+  }
+  .buy a {
+    color: var(--green);
+  }
+  .orange_b {
+    justify-self: center;
+    margin-block: var(--space-lg);
+  }
+ @media (width > 750px) {
+    .buy {
+        display: grid;
+        position: relative;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-lg);
+        padding-inline: var(--space-xl);
+        margin-top: 0;
+        z-index: 1;
+        border-bottom: 2px solid var(--green);
+    }
+    .buy > img:first-child {
+    opacity: .8;
+    border-bottom: none;
+    margin-bottom: 0;
+    order: 1;
+    align-self: end;
+}
+.leftside {
+    padding-inline: var(--space-md);
+    padding-block: var(--space-md);
+    justify-items: start;
+}
+.leftside :is(h1, h4) {
+    justify-self: start;
+  }
+h1 {
+    font-size: var(--fs-2w);
+    font-size: 60px;
+
+    margin-bottom: var(--space-sm);
+    font-weight: var(--fw-l);
+}
+.leftside h4 {
+    font-size: var(--fs-3w);
+}
+.price {
+    margin-block: var(--space-xs);
+}
+.price {
+    justify-items: start;
+}
+    p {
+        font-size: var(--fs-n);
+        text-align: start;
+    }
+    #orange {
+      position: absolute;
+      display: block;
+      padding-top: 1.5vw;
+      bottom: 3vw;
+      left: 50%;
+      z-index: 1;
+      animation: move 3s infinite;
+    }
+
+    @keyframes move {
+      0% {
+        transform: translateY(0);
+      }
+
+      60% {
+        transform: translateY(0);
+        animation-timing-function: ease-out;
+      }
+
+      70% {
+        transform: translateY(2vw);
+        animation-timing-function: ease-out;
+      }
+      80% {
+        transform: translateY(0.5vw);
+        animation-timing-function: ease-in;
+      }
+
+      90% {
+        transform: translateY(2vw);
+        animation-timing-function: ease-out;
+      }
+
+      100% {
+        transform: translateY(0);
+        animation-timing-function: ease-out;
+      }
+    }
+    .description {
+        position: relative;
+        box-sizing: border-box;
+        width: 100%;
+        margin-top: 0;
+        padding-top: var(--space-md);
+        background-color: var(--bg-grey);
+
+    }
+    .art1, .art2 {
+        position: relative;
+        background-color: var(--bg-grey);
+        overflow: hidden;
+
+    }
+    .art2 {
+        padding-top: 0;
+    }
+
+section {
+    justify-self: center;
+}
+article {
+    display: grid;
+    /* justify-self: center; */
+    justify-items: start;
+    padding-block: var(--space-md);
+    width: min(85vw, 70rem);
+    /* padding-inline: var(--space-xl); */
+}
+:is(.art3, .art4, .art5,.art6 ) {
+grid-template-columns: 3fr 2fr;
+grid-template-rows: 1fr 1fr 1fr;
+gap: var(--space-lg);
+border-bottom: 2px solid var(--green);
+}
+:is(.art3, .art4, .art5,.art6 ) img{
+    order: 1;
+    max-width: 30vw;
+}
+:is(.art3, .art4, .art5,.art6 ) :is(h2,p){
+grid-column: 1;
+}
+:is(.art3, .art4, .art5,.art6 ) img{
+grid-column: 2;
+grid-row: 1/ span 3;
+}
+:is(.art3, .art4, .art5,.art6 ) h2{
+    align-self: flex-end;
+
+}
+:is(.art3, .art4, .art5,.art6 ) p{
+
+}
+.art3 img, .art4 img, .art5 img, .art6 img {
+    align-self: center;
+  }
+  article:not(article:is(.art1, .art2)) {
+    background-color: var(--white);
+  }
+    article p{
+        text-align: start;
+        max-width: 90ch;
+    }
+
+    .art1 img:nth-of-type(1) {
+    display: block;
+  }
+  .imgs {
+    max-width: 90vw;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    order: 1;
+    margin-top: var(--space-lg);
+    gap: var(--space-lg);
+  }
+  .imgs img {
+    max-width: 35vw;
+  }
+  .art2 img {
+    display: none;
+  }
+.card {
+      inline-size: 20vw;
+    }
+    .orange_b {
+      margin-block: var(--space-xxl);
+    }
+  }
+@media (750px < width < 1150px) {
+
+h1 {
+    font-size: max(5vw, 50px);
+    font-size: var(--fs-1);
+    margin-bottom: var(--space-xs);
+}
+.leftside {
+    padding-inline: var(--space-sm);
+}
+.buy {
+    gap: var(--space-xs);
+    padding-inline: var(--space-sm);
+}
+.info {
+    margin-block: var(--space-sm);
+  }
+  .info :not(p:last-child) {
+    margin-bottom: var(--space-xs);
+  }
+  #orange {
+      bottom: 3vw;
+    }
+    #orange img {
+      width: 3vw;
+    }
+  article > :not(:last-child) {
+    margin-bottom: 0;
+  }
+  }
+  @media (750px < width < 930px) {
+    p {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    .leftside h4 {
+        font-size: var(--fs-4w);
+    }
+    .leftside {
+        padding-inline: var(--space-xs)
+        padding-block: var(--space-xs)
+
+    }
+    #orange {
+      bottom: 3vw;
+    }
+  }
+</style>
+
+<script>
+    window.addEventListener("load", pricing);
+
+    function pricing() {
+    const priceElement = document.getElementById("displayed_price");
+    const ageElement = document.getElementById("displayed_age");
+    const ageSelect = document.getElementById("age") as HTMLSelectElement;
+
+    // Priserne/alderen for de forskellige valgmuligheder defineres i et array
+    const prices = {
+      "5": "299,00 DKK",
+      "8": "449,00 DKK",
+      "13": "799,00 DKK"
+    };
+    const ages = {
+      "5": "Alder: 5 år",
+      "8": "Alder: 8 år",
+      "13": "Alder: 13 år"
+    };
+
+    // Funktion som updaterer den viste pris/alder
+    function updatePrice() {
+      const selectedOption = ageSelect.value;
+      const price = prices[selectedOption];
+      const age = ages[selectedOption];
+      priceElement.textContent = price;
+      ageElement.textContent = age;
+    }
+
+    // Tilføjer eventListener når der vælges en ny alder
+    ageSelect.addEventListener("change", updatePrice);
+    ageSelect.addEventListener("change", updatePrice);
+    }
+  </script>

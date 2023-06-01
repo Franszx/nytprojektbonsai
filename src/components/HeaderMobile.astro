@@ -1,0 +1,145 @@
+---
+---
+
+<section>
+  <div class="menu_container">
+    <div class="burger">
+      <div class="bar"></div>
+    </div>
+  </div>
+  <a href="/"
+    ><img class="logo" src="/img/logo.png" alt="Bonsaihjørnets logo" /></a
+  >
+  <nav class="nav_web">
+    <ul>
+      <li><a href="/bonsaitrees">BONSAITRÆER</a></li>
+      <li><a href="/shop">SHOP</a></li>
+      <li><a href="/omOs">OM OS</a></li>
+      <li><a href="/kontakt">KONTAKT</a></li>
+    </ul>
+  </nav>
+  <img class="kurv" src="/img/mobile_header_kurv.svg" alt="Kurven" />
+  <img class="kurv_web" src="/img/header_kurv_web.svg" alt="Kurven" />
+</section>
+<script src="../scripts/burger.js"></script>
+
+<style>
+  section {
+    padding-top: 15px;
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-image: url(/img/header_index_splash.webp);
+    height: 100px;
+    width: 100%;
+    background-size: cover;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  a img {
+    width: 50px;
+  }
+
+  .kurv {
+    width: 44px;
+    cursor: pointer;
+  }
+
+  .kurv_web,
+  nav {
+    display: none;
+  }
+
+  .burger {
+    position: relative;
+    z-index: 90;
+    display: block;
+    cursor: pointer;
+  }
+  .burger .bar,
+  .burger::before,
+  .burger::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    border-radius: 5px;
+    background-color: var(--white-text);
+    margin: 0 0 8px 0px;
+    transition: 0.8s;
+  }
+
+  .burger::after {
+    margin: 0;
+  }
+  .burger.is-active::before {
+    transform: rotate(45deg) translate(5px, 15px);
+  }
+  .burger.is-active::after {
+    transform: rotate(-45deg) translate(0px, -10px);
+  }
+  .burger.is-active .bar {
+    opacity: 0;
+  }
+
+  @media (min-width: 700px) {
+    .menu_container {
+      display: none;
+    }
+
+    section {
+      padding-top: 0px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 0px;
+      justify-content: space-between;
+      background-image: url(/img/header_index_web.webp);
+      height: 100px;
+    }
+
+    a img {
+      width: 80px;
+    }
+
+    .kurv {
+      display: none;
+    }
+    .kurv_web {
+      display: block;
+      width: 80px;
+      height: 38px;
+      position: relative;
+      top: 20px;
+      cursor: pointer;
+    }
+
+    nav {
+      display: block;
+      width: 500px;
+      position: relative;
+      top: 22px;
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-evenly;
+      font-family: var(--ff-cta);
+      font-weight: var(--fw-l);
+      font-size: var(--fs-4);
+    }
+  }
+
+  @media (min-width: 1000px) {
+    nav {
+      width: 750px;
+    }
+
+    section {
+      padding-left: 30px;
+      padding-right: 50px;
+    }
+  }
+</style>

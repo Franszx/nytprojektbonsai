@@ -1,0 +1,531 @@
+---
+import OrangeButton from "../components/OrangeButton.astro";
+import Layout from "../layout/Layout.astro";
+import TreeCard from "../components/TreeCard.astro";
+
+const url = "https://bcjykukoxzsusmoltaky.supabase.co/rest/v1/bonsaitrees";
+const api =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJjanlrdWtveHpzdXNtb2x0YWt5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODUwMTg3ODYsImV4cCI6MjAwMDU5NDc4Nn0.AD5gYYbHDUkLyrwBcKhI3TJgXTSqIj9SSYw9TvhA7kA";
+
+const data = await fetch(url, {
+  method: "GET",
+  headers: {
+    apikey: api,
+  },
+}).then((res) => res.json());
+---
+
+<Layout title="Bonsaihjørnet">
+  <main>
+    <div class="splash">
+      <h1>Bonsaihjørnet</h1>
+      <h2>Hos os har du tid til at fordybe dig</h2>
+      <p>
+        Få naturens skønhed ind i dit hjem med vores eksklusive udvalg af
+        stuebonsai. <br /> Skab fred og harmoni med disse bonsai træer, der udstråler
+        elegance og styrke.
+      </p>
+      <!-- <a href="#velkommen" class="pilned"><div></div><div></div></a> -->
+      <a href="#velkommen" class="pilned"><img src="/img/pil.svg" alt="" /></a>
+    </div>
+    <h2 id="velkommen">Velkommen</h2>
+    <img class="gren" src="/img/gren.svg" alt="figur af bonsaigren" />
+    <p>
+      Hej og velkommen til Bonsaihjørnet.dk! Opdag skønheden i bonsai-træer hos
+      os. Vi tilbyder et udvalg af unikke bonsaitræer der bringer naturens
+      skønhed og harmoni ind i dit hjem eller kontor.
+    </p>
+    <section class="tree_section">
+      {
+        data.slice(0, 3).map((treecard) => {
+          return <TreeCard data={treecard} />;
+        })
+      }
+      <!-- <div class="tree_speci">
+        <img src="/img/elm.webp" alt="Bonsaitræ, Elm" />
+        <h3>Elm</h3>
+        <h4>"Zelkova Serrata"</h4>
+        <p>Beundret for deres æstetik, der giver en fornemmelse af styrke og harmoni i en kompakt form.</p>
+      </div>
+      <div class="tree_speci">
+        <img src="/img/liguster.webp" alt="Bonsaitræ, Japansk Liguster" />
+        <h3>Japansk Liguster</h3>
+        <h4>“Ligustrium Japonicum”</h4>
+        <p>Har små, mørkegrønne blade og tætte løvmasse og symboliserer skønhed, ro og visdom.</p>
+      </div>
+      <div class="tree_speci">
+        <img src="/img/serissa.webp" alt="Bonsaitræ, Serissa" />
+        <h3>Serissa</h3>
+        <h4>“Sarcocephalus”</h4>
+        <p>Det er kendt for sine smukke, små blade og kompakte vækst og skaber en fornemmelse af elegance og harmoni.</p>
+      </div> -->
+    </section>
+    <OrangeButton link="/bonsaitrees/" linktext="BONSAITRÆER" />
+    <div class="dividerline"></div>
+    <h2>Shop</h2>
+    <img class="gren" src="/img/gren.svg" alt="figur af bonsaigren" />
+    <p>
+      I vores shop finder du et fantastisk udvalg af bonsaitræer og tilbehør til
+      at skabe din helt egen miniature-have. Vi er dedikerede til at tilbyde dig
+      de bedste produkter til at pleje og dyrke dine bonsaitræer, og vi er
+      stolte af at være en pålidelig kilde til bonsai-materialer af høj
+      kvalitet.
+    </p>
+    <section class="shop_section">
+      <a href="/bowlProduct/" class="toolcard hover">
+        <figure>
+          <img src="/img/skål_1.webp" alt="Billede af en bonsaiskål" />
+        </figure>
+        <div class="space_b">
+          <h3 class="space_b">Bonsaiskål</h3><span>Pris 169,-</span>
+        </div>
+        <h5>Sort plettet bonsaiskål med huller i bunden</h5>
+      </a>
+      <a href="/" class="toolcard hover">
+        <figure><img src="/img/saks_1.webp" alt="Billede af en saks" /></figure>
+        <div class="space_b">
+          <h3 class="space_b">Bonsaisaks</h3><span>Pris 349,-</span>
+        </div>
+        <h5>
+          Solid bonsaisaks af høj kvalitet, som klarer både små grene og alt det
+          grønne.
+        </h5>
+      </a>
+      <a href="/bowlProduct/" class="toolcard hover">
+        <figure>
+          <img src="/img/skål_2.webp" alt="Billede af en bonsaiskål" />
+        </figure>
+        <div class="space_b">
+          <h3 class="space_b">Bonsaiskål</h3><span>Pris 239,-</span>
+        </div>
+        <h5>
+          Grøn firkantet bonsaiskål uden underskål. Fås i flere størrelser.
+        </h5>
+      </a>
+      <a href="" class="toolcard hover">
+        <figure>
+          <img src="/img/saks_2.webp" alt="Billede af en bonsaisaks" />
+        </figure>
+        <div class="space_b">
+          <h3 class="space_b">Bonsaisaks</h3><span>Pris 179,-</span>
+        </div>
+        <h5>
+          Bonsaisaks af høj kvalitet, som egner sig til klipning af blade og de
+          mindste grene.
+        </h5>
+      </a>
+    </section>
+    <OrangeButton link="/shop/" linktext="SHOP" />
+  </main>
+</Layout>
+
+<style>
+  .hover img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.8s ease-out;
+  }
+  figure {
+    overflow: hidden;
+  }
+  .hover:hover img,
+  .hover:focus img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  main {
+    position: relative;
+    margin-bottom: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .splash {
+    display: grid;
+    width: 100%;
+    align-content: flex-start;
+    background-color: var(--almost-black);
+    background-image: url(/img/index_splash.webp);
+    background-size: cover;
+    aspect-ratio: 393/560;
+    text-align: center;
+    padding-top: var(--space-lg);
+    padding-inline: var(--space-md);
+  }
+
+  .splash h2 {
+    color: var(--white-text);
+    font-size: var(--fs-4);
+    margin-top: var(--space-sm);
+  }
+  .splash p {
+    color: var(--white-text);
+    margin-top: var(--space-sm);
+    max-width: 35ch;
+    justify-self: center;
+  }
+  h1 {
+    color: var(--green);
+    font-family: var(--ff-cta);
+    font-size: var(--fs-1);
+    font-weight: var(--fw-l);
+  }
+  h2 {
+    color: var(--green);
+    font-family: var(--ff-cta);
+    font-size: var(--fs-2);
+    font-weight: var(--fw-l);
+    margin-top: var(--space-lg);
+  }
+  h3 {
+    color: var(--green);
+    font-family: var(--ff-cta);
+    font-weight: var(--fw-l);
+    font-size: var(--fs-3);
+  }
+  h4 {
+    font-family: var(--ff-cta);
+    font-weight: var(--fw-l);
+    color: var(--green);
+    font-size: var(--fs-4);
+  }
+  p {
+    color: var(--almost-black);
+    font-family: var(--ff-text);
+    font-size: var(--fs-p);
+    line-height: 1.4;
+  }
+  .gren {
+    width: 120px;
+    margin-block: var(--space-sm);
+  }
+  p,
+  h1,
+  h2 {
+    text-align: center;
+  }
+  p {
+    max-width: 80vw;
+  }
+  /* .tree_speci {
+    display: grid;
+    justify-items: center;
+    margin-block: var(--space-lg);
+  }
+  .tree_speci img {
+    width: 75vw;
+  } */
+  .toolcard div {
+    margin-top: var(--space-xs);
+  }
+  .toolcard {
+    margin-top: var(--space-xl);
+    margin-inline: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+  }
+  .space_b {
+    display: flex;
+    justify-content: space-between;
+    font-weight: var(--fw-l);
+    font-size: var(--fs-4w);
+    font-family: var(--ff-cta);
+  }
+  .toolcard h5 {
+    margin-top: var(--space-xs);
+    color: var(--almost-black);
+    font-family: var(--ff-text);
+    font-weight: var(--fw-l);
+    font-size: var(--fs-p);
+  }
+  .toolcard :is(h5, div) {
+    padding-inline: var(--space-xs);
+  }
+  .toolcard:last-of-type {
+    margin-bottom: var(--space-xl);
+  }
+  .space_b span {
+    font-weight: var(--fw-m);
+    color: var(--green);
+  }
+  .dividerline {
+    height: 1px;
+    border-radius: 50px;
+    width: 80%;
+    background-color: #878787;
+    margin-top: var(--space-lg);
+  }
+  .pilned {
+    display: none;
+  }
+  .tree_section {
+    display: grid;
+    max-width: 80vw;
+    gap: var(--space-md);
+    margin-block: var(--space-md);
+  }
+  @media (min-width: 750px) {
+    .pilned {
+      position: absolute;
+      display: block;
+      padding-top: 1.5vw;
+      bottom: 3vw;
+      left: 50%;
+      animation: move 3s infinite;
+    }
+
+    @keyframes move {
+      0% {
+        transform: translateY(0);
+      }
+
+      60% {
+        transform: translateY(0);
+        animation-timing-function: ease-out;
+      }
+
+      70% {
+        transform: translateY(2vw);
+        animation-timing-function: ease-out;
+      }
+      80% {
+        transform: translateY(0.5vw);
+        animation-timing-function: ease-in;
+      }
+
+      90% {
+        transform: translateY(2vw);
+        animation-timing-function: ease-out;
+      }
+
+      100% {
+        transform: translateY(0);
+        animation-timing-function: ease-out;
+      }
+    }
+    .splash {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 65%;
+      background-image: url(/img/splash_web_2.webp);
+      aspect-ratio: 1900/800;
+      height: auto;
+      text-align: center;
+      padding-top: var(--space-xxl);
+      padding-inline: var(--space-md);
+    }
+    .splash p,
+    .splash h2 {
+      text-align: start;
+      grid-column: 2;
+      justify-self: start;
+      margin-left: 15%;
+    }
+    .splash h2 {
+      font-size: var(--fs-3);
+      margin-top: var(--space-md);
+    }
+    .splash p {
+      margin-top: var(--space-sm);
+      font-size: var(--fs-n);
+      max-width: 38ch;
+    }
+    main {
+      top: -30px;
+      margin-bottom: var(--space-lg);
+    }
+    h1 {
+      font-size: var(--fs-1w);
+      justify-self: start;
+      align-self: end;
+      grid-column: 2;
+    }
+
+    .gren {
+      width: 220px;
+      margin-block: var(--space-md);
+    }
+    h2 {
+      font-size: var(--fs-2w);
+      margin-top: var(--space-xl);
+    }
+    h3 {
+      font-size: var(--fs-3w);
+    }
+    h4 {
+      font-size: var(--fs-4w);
+    }
+    p {
+      font-size: var(--fs-n);
+      max-width: 85ch;
+    }
+    .gren + p {
+      width: min(75ch, 80vw);
+      /* width: clamp(55ch, 80vw, 75ch); */
+    }
+    .tree_section {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-inline: calc(var(--space-xxl) * 1.3);
+      margin-bottom: var(--space-lg);
+      gap: var(--space-xl);
+      margin-block: var(--space-lg);
+    }
+    /* .tree_speci {
+      display: flex;
+      flex-direction: column;
+      justify-items: start;
+      margin-block: 0;
+    }
+    .tree_speci :is(h3, h4) {
+      margin-top: var(--space-xxs);
+    }
+    .tree_speci p {
+      text-align: start;
+      margin-top: var(--space-xs);
+    }
+    .tree_speci :is(p, h3, h4) {
+      margin-inline: var(--space-xs);
+    }
+    .tree_speci img {
+      width: 75vw;
+    } */
+    .dividerline {
+      width: 80%;
+      margin-top: calc(var(--space-xl) * 1.5);
+    }
+    .shop_section {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-inline: calc(var(--space-xxl) * 1.3);
+      gap: var(--space-xl);
+      margin-bottom: var(--space-lg);
+      margin-top: var(--space-xl);
+    }
+    .toolcard div {
+      margin-top: var(--space-xxs);
+    }
+    .toolcard {
+      margin-inline: 0;
+      margin-top: 0;
+    }
+    .toolcard :is(div, h5) {
+      padding-inline: var(--space-xxs);
+      /* display: flex; */
+      /* flex-direction: column; */
+    }
+    /* .space_b {
+      padding-inline: 0;
+    } */
+
+    .toolcard h5 {
+      text-align: start;
+      font-size: var(--fs-n);
+    }
+  }
+  @media (750px < width < 1175px) {
+    .splash {
+      display: grid;
+      grid-template-columns: 1fr 65%;
+      background-image: url(/img/splash_web_2.webp);
+      aspect-ratio: 1900/800;
+      height: auto;
+      text-align: center;
+      padding-top: var(--space-xl);
+      padding-inline: var(--space-md);
+    }
+    h1 {
+      font-size: calc(var(--fs-2w) + 0.8vw);
+    }
+    .splash p,
+    .splash h2 {
+      text-align: start;
+      grid-column: 2;
+      justify-self: start;
+      margin-left: 15%;
+    }
+    .splash h2 {
+      font-size: var(--fs-4);
+      margin-top: var(--space-md);
+    }
+    .splash p {
+      margin-top: var(--space-sm);
+      font-size: 14px;
+      max-width: 38ch;
+    }
+    .tree_section {
+      gap: var(--space-md);
+      margin-inline: var(--space-xl);
+    }
+    h3 {
+      font-size: calc(var(--fs-3w) * 0.7);
+    }
+    h4 {
+      font-size: calc(var(--fs-4w) * 0.8);
+    }
+    .shop_section {
+      margin-inline: calc(var(--space-xl) * 0.8);
+      gap: var(--space-sm);
+    }
+    .space_b :is(h3, span) {
+      font-size: calc(var(--fs-4w) * 0.8);
+      /* font-size: max(var(--fs-4w)); */
+    }
+    p {
+      font-size: 14px;
+    }
+    .pilned {
+      bottom: 3vw;
+    }
+    .pilned img {
+      width: 3vw;
+    }
+  }
+  @media (500px < width < 750px) {
+    main {
+      /* top: -200px; */
+    }
+
+    /* .tree_speci img {
+      width: 80vw;
+    } */
+
+    p {
+      max-width: 75vw;
+    }
+    /* .tree_speci p {
+      text-align: left;
+    }
+    .tree_speci :is(h3, h4, p) {
+      margin-inline: var(--space-xs);
+    } */
+    .shop_section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .toolcard {
+      width: 65vw;
+    }
+    .toolcard h5 {
+      text-align: start;
+    }
+    .splash {
+      padding-top: min(8vw, var(--space-xxl));
+      padding-left: var(--space-xxl);
+      background-image: url(/img/splash_500-750.webp);
+    }
+    .splash h1 {
+      font-size: calc(var(--fs-1) + 2vw);
+    }
+    .splash h2 {
+      font-size: calc(var(--fs-4) + 0.5vw);
+    }
+    .splash p {
+      font-size: calc(var(--fs-p) + 0.25vw);
+      max-width: 35ch;
+    }
+  }
+</style>

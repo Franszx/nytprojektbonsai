@@ -1,0 +1,320 @@
+---
+import Layout from "../layout/Layout.astro";
+---
+
+<Layout title="Om os">
+  <section class="om">
+    <div class="leftside">
+      <h1>Om os</h1>
+      <p>Hej og velkommen til Bonsaihjørnet.dk! Vi er bonsaientusiaster, der simpelthen elsker alt ved bonsaitræerer. Vi har brugt mange år på at dykke ned i bonsaiverdenen og har samlet masser af viden og erfaring undervejs.</p>
+      <p>Vores mission er at dele vores passion og hjælpe dig med at opdage skønheden og glæden ved bonsai.</p>
+    </div>
+    <img src="/img/spire.webp" alt="Billede af et småt træ der vokser i jord, holdt af to hænder" />
+    <a href="#goal" class="pilned"><img src="/img/pil.svg" alt="" /></a>
+  </section>
+  <section id="goal" class="goal">
+    <div class="goaldiv">
+      <h2>Vores mål</h2>
+      <p>
+        Vores mål er at gøre bonsai sjovt, nemt og tilgængeligt for alle. Uanset om du er en erfaren bonsaigartner eller nybegynder, er du velkommen i vores bonsaifællesskab. Vi tror på at skabe en afslappet og venlig atmosfære, hvor vi kan dele
+        vores passion og lære af hinanden. Vi tror på at pasning af bonsaitræer kan give os meget som mennesker og det kan være en kilde til at opnå fordybelse, velvære og ro. Vi tror på at pasning af bonsaitræer kan give os meget som mennesker og
+        det kan være en kilde til at opnå fordybelse, velvære og ro.
+      </p>
+    </div>
+    <img src="/img/fordybelse.webp" alt="Billede af bonsaitræ der holdes i af en person" />
+  </section>
+  <section class="history">
+    <div class="left">
+      <h2>Historie</h2>
+      <p>
+        Bonsai Hjørnet blev grundlagt i 2010 af Peter Røssel, en erfaren bonsaidyrker med mange års erfaring og ekspertise. Peter blev fascineret af bonsaitræernes skønhed, æstetik og den dybe forbindelse mellem natur og menneske. Han ønskede at
+        skabe et sted, hvor folk kunne finde alt, hvad de behøver for at begynde deres egen bonsairejse.
+      </p>
+      <img src="/img/history1.webp" alt="Billede af butikken, Bonsaihjørnet" />
+      <p>
+        I november 2013 åbnede vi bonsaihjørnet.dk og blev hurtigt en anerkendt kilde til bonsaividen og forsyninger i Danmark. Vores mål har altid været at formidle primært stuebonsai til alle danskere og give vores kunder den bedste oplevelse og
+        kvalitet.
+      </p>
+      <img src="/img/history2w.webp" alt="Billede af butikken, Bonsaihjørnet" />
+      <p>
+        Vi arbejder hele tiden på at forbedre kvaliteten af vores bonsaitræer. Hver træart bliver nøje udvalgt for at sikre, at de er levedygtige og egner sig godt til at blive dyrket som bonsai. Hvis vi selv støder på problemer med at få en art til
+        at trives, tager vi det som et tegn på, at det samme kan ske for vores kunder, og vi indstiller derfor hurtigt salget af disse arter. Samtidig er vi altid på udkig efter nye og spændende bonsaitræerer at tilføje til vores sortiment.
+      </p>
+    </div>
+    <div class="imgdiv">
+      <!-- <img src="/img/history1.webp" alt="Billede af butikken, Bonsaihjørnet" /> -->
+      <img src="/img/history2.webp" alt="Billede af butikken, Bonsaihjørnet" />
+    </div>
+  </section>
+  <div class="line"></div>
+  <section class="last">
+    <div>
+      <p>
+        Vi er taknemmelige for at være en del af det danske bonsaifællesskab og ser frem til at være din partner på din bonsairejse. Uanset om du er nybegynder eller erfaren, er du velkommen hos os. Vi stræber efter at give vores kunder den bedste
+        oplevelse, kvalitet og service.
+      </p>
+      <p>Tak fordi du besøger Bonsai Hjørnet. Vi ser frem til at dele vores passion og hjælpe dig med at skabe din egen lille bonsaiverden.</p>
+    </div>
+    <img src="/img/bottom_tree.webp" alt="" />
+  </section>
+</Layout>
+
+<style>
+  h1,
+  h2 {
+    font-family: var(--ff-cta);
+    font-weight: var(--fw-l);
+    color: var(--green);
+  }
+  p {
+    font-family: var(--ff-text);
+    font-weight: var(--fw-l);
+    color: var(--almost-black);
+  }
+  h1 {
+    font-size: var(--fs-2);
+    text-align: center;
+    margin-block: var(--space-md);
+  }
+  h2 {
+    font-size: var(--fs-3);
+    text-align: center;
+  }
+  p {
+    max-width: 80vw;
+    text-align: center;
+    font-size: var(--fs-p);
+    line-height: 1.6;
+  }
+  h2 {
+    margin-block: var(--space-sm);
+  }
+  section,
+  section div {
+    display: grid;
+    justify-content: center;
+  }
+  section:not(.last) {
+    padding-block: var(--space-lg);
+  }
+  .om {
+    border-bottom: 2px solid var(--green);
+  }
+  .goal {
+    background-color: var(--bg-grey);
+    gap: var(--space-md);
+  }
+  .history {
+    gap: var(--space-md);
+  }
+  .left {
+    display: grid;
+    gap: var(--space-sm);
+  }
+  .imgdiv {
+    display: none;
+  }
+  .last {
+    display: grid;
+    padding-top: var(--space-lg);
+    justify-items: center;
+  }
+  .line {
+    height: 1px;
+    border-radius: 50px;
+    width: 80%;
+    background-color: #878787;
+    margin-inline: auto;
+  }
+  :is(.goal, .history) img {
+    max-width: 80vw;
+    opacity: 0.8;
+  }
+  .last img {
+    opacity: 0.8;
+  }
+  .om img {
+    opacity: 0.9;
+    aspect-ratio: 877/706;
+  }
+
+  .pilned {
+    display: none;
+  }
+  @media (width > 750px) {
+    h1 {
+      font-size: var(--fs-2w);
+      text-align: start;
+    }
+    h2 {
+      font-size: calc(var(--fs-3w) * 1.5);
+      text-align: start;
+    }
+    p {
+      font-size: var(--fs-n);
+      text-align: start;
+    }
+    section:is(.om) {
+      display: flex;
+      justify-content: space-between;
+      padding-block: 0;
+    }
+    .om {
+      position: relative;
+    }
+    .om div {
+      display: grid;
+    }
+    .om img {
+      max-width: 60vw;
+      aspect-ratio: 877/706;
+    }
+    .leftside {
+      align-content: center;
+      max-width: 30vw;
+      margin-left: max(100px, 15vw);
+    }
+    .goal {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xxl);
+    }
+    .goal img {
+      order: -1;
+      justify-self: end;
+      max-height: 60vh;
+      opacity: 1;
+    }
+    .goal div {
+      align-content: center;
+      justify-self: start;
+      gap: var(--space-sm);
+    }
+    .goal h2 {
+      margin-block: var(--space-xs);
+    }
+    .goal p {
+      max-width: max(400px, 30vw);
+    }
+    .history img:not(.imgdiv img) {
+      display: none;
+    }
+    .history {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+    .left {
+      display: grid;
+      align-self: center;
+      max-width: 35vw;
+      justify-self: end;
+      gap: var(--space-md);
+    }
+    .imgdiv {
+      display: grid;
+      justify-content: start;
+    }
+    .imgdiv img {
+      max-width: 35vw;
+    }
+    .last {
+      padding-top: 0;
+    }
+    .last div,
+    .last img {
+      /* place-self: center; */
+      grid-area: 1/1/2/2;
+    }
+    .last div {
+      align-self: center;
+      justify-self: start;
+      max-width: max(30vw, 360px);
+      margin-left: min(8vw, 8rem);
+      z-index: 1;
+    }
+    /* .history img:nth-of-type(1),
+    .history img:nth-of-type(2) {
+      display: none;
+    } */
+    /* .history img:first-of-type {
+      grid-area: 1/2/3/3;
+      max-width: 40vw;
+    }
+    .history img:nth-of-type(2) {
+      grid-area: 3/2/5/3;
+      max-width: 40vw;
+    }
+    .history h2 {
+      grid-area: 1/1/2/2;
+      align-self: end;
+    } */
+
+    .pilned {
+      position: absolute;
+      display: block;
+      padding-top: 1.5vw;
+      bottom: 3vh;
+      left: 50%;
+      animation: move 3s infinite;
+    }
+    @keyframes move {
+      0% {
+        transform: translateY(0);
+      }
+
+      60% {
+        transform: translateY(0);
+        animation-timing-function: ease-out;
+      }
+
+      70% {
+        transform: translateY(2vw);
+        animation-timing-function: ease-out;
+      }
+      80% {
+        transform: translateY(0.5vw);
+        animation-timing-function: ease-in;
+      }
+
+      90% {
+        transform: translateY(2vw);
+        animation-timing-function: ease-out;
+      }
+
+      100% {
+        transform: translateY(0);
+        animation-timing-function: ease-out;
+      }
+    }
+  }
+  @media (750px < width < 930px) {
+    .last div {
+      margin-left: min(4vw, 8rem);
+      max-width: max(30vw, 340px);
+    }
+  }
+  @media (750px < width < 1190px) {
+    .goal {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-lg);
+    }
+    .left {
+      display: grid;
+      align-self: center;
+      max-width: 45vw;
+      justify-self: end;
+      gap: var(--space-md);
+    }
+    .imgdiv img {
+      max-width: 45vw;
+    }
+    .leftside {
+      align-content: center;
+      max-width: 30vw;
+      margin-left: max(80px, 10vw);
+    }
+  }
+  @media (500px < width < 750px) {
+  }
+</style>

@@ -1,0 +1,468 @@
+---
+import Layout from "../layout/Layout.astro";
+---
+
+<Layout title="Bonsaihjørnet">
+  <main>
+    <section class="section">
+      <h1>Shop</h1>
+      <img src="/img/gren.svg" alt="figur af bonsaigren" class="gren" />
+    </section>
+    <section class="section2">
+      <div class="firstbox">
+        <a href="/bonsaitrees">
+          <div class="barn filter"></div>
+          <h2>Bonsaitræer</h2></a
+        >
+      </div>
+
+      <div class="split">
+        <div class="secondbox">
+          <a href="/bonsaibowls"
+            ><div class="barn2 filter"></div>
+            <h2>Bonsaiskåle</h2></a
+          >
+        </div>
+
+        <div class="thirdbox">
+          <a href="/tools">
+            <div class="barn3 filter"></div>
+            <h2>Redskaber</h2></a
+          >
+        </div>
+      </div>
+      <div class="split2">
+        <div class="fourthbox">
+          <a href="">
+            <div class="barn4 filter"></div><h2>Jord</h2>
+          </a>
+        </div>
+        <div class="fifthbox">
+          <a href=""> <div class="barn5 filter"></div><h2>Gødning</h2></a>
+        </div>
+      </div>
+      <div class="sixthbox">
+        <a href="">
+          <div class="barn6 filter"></div><h2>Diverse</h2>
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    position: relative;
+    padding-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section {
+    padding-top: 28px;
+    padding-bottom: 50px;
+  }
+
+  img {
+    width: 120px;
+  }
+  h1 {
+    color: var(--green);
+    font-family: var(--ff-cta);
+    font-weight: var(--fw-l);
+    font-size: var(--fs-1);
+  }
+  .section2 {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    width: 350px;
+    justify-content: center;
+  }
+  .firstbox h2 {
+    position: absolute;
+    top: 85px;
+    left: 100px;
+    font-family: var(--ff-cta);
+    font-weight: var(--fw-sb);
+    text-align: center;
+    border-radius: 15px;
+  }
+  .firstbox,
+  .secondbox,
+  .thirdbox,
+  .fourthbox,
+  .fifthbox,
+  .sixthbox {
+    background-size: cover;
+    position: relative;
+    color: var(--white);
+  }
+
+  h2 {
+    position: absolute;
+    font-family: var(--ff-cta);
+    font-weight: var(--fw-sb);
+    text-align: center;
+  }
+
+  .firstbox {
+    width: 350px;
+    height: 190px;
+    margin-bottom: 8px;
+    /* background: url(img/shop_bonsaitree.webp); */
+    overflow: hidden;
+    grid-row: 1;
+  }
+
+  .barn {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url(/img/shop_bonsaitree.webp);
+    background-position: center;
+    transition: all 1s;
+  }
+
+  .firstbox:hover .barn,
+  .firstbox:focus .barn,
+  .secondbox:hover .barn2,
+  .secondbox:focus .barn2,
+  .thirdbox:hover .barn3,
+  .thirdbox:focus .barn3,
+  .fourthbox:hover .barn4,
+  .fourthbox:focus .barn4,
+  .fifthbox:hover .barn5,
+  .fifthbox:focus .barn5,
+  .sixthbox:hover .barn6,
+  .sixthbox:focus .barn6 {
+    transform: scale(1.05);
+  }
+
+  .firstbox:hover .filter::after,
+  .secondbox:hover .filter::after,
+  .thirdbox:hover .filter::after,
+  .fourthbox:hover .filter::after,
+  .fifthbox:hover .filter::after,
+  .sixthbox:hover .filter::after {
+    opacity: 0.4;
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row: 2;
+  }
+  .secondbox {
+    width: 166px;
+    height: 180px;
+    grid-column: 1;
+    align-self: center;
+    overflow: hidden;
+  }
+
+  .barn2 {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url(/img/shop_bonsaibowl.webp);
+    background-position: center;
+    transition: all 1s;
+  }
+  .secondbox h2 {
+    top: 85px;
+    left: 10px;
+  }
+  .thirdbox {
+    width: 166px;
+    height: 180px;
+    grid-column: 2;
+    justify-self: flex-end;
+    align-self: center;
+    overflow: hidden;
+  }
+
+  .barn3 {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url(/img/tools_mobil.webp);
+    background-position: center;
+    transition: all 1s;
+  }
+
+  .a_3 {
+    display: flex;
+    justify-content: end;
+  }
+
+  .a_2 {
+    display: flex;
+    justify-content: start;
+  }
+  .thirdbox h2 {
+    position: absolute;
+    top: 85px;
+    left: 20px;
+    font-family: var(--ff-cta);
+    font-weight: var(--fw-sb);
+    text-align: center;
+    border-radius: 15px;
+  }
+  .split2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row: 3;
+  }
+
+  .fourthbox {
+    width: 166px;
+    height: 180px;
+    background-color: rgb(179, 140, 72);
+    grid-column: 1;
+    align-self: center;
+    overflow: hidden;
+  }
+
+  .barn4 {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url(/img/jord_mobil.webp);
+    background-position: center;
+    transition: all 1s;
+  }
+  .fourthbox h2 {
+    position: absolute;
+    top: 85px;
+    left: 50px;
+    font-family: var(--ff-cta);
+    font-weight: var(--fw-sb);
+    text-align: center;
+    border-radius: 15px;
+  }
+
+  .fifthbox {
+    width: 166px;
+    height: 180px;
+    background-color: rgb(142, 72, 179);
+    grid-column: 2;
+    justify-self: flex-end;
+    align-self: center;
+    overflow: hidden;
+  }
+
+  .barn5 {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url(/img/godning_mobil.webp);
+    background-position: center;
+    transition: all 1s;
+  }
+
+  .fifthbox h2 {
+    position: absolute;
+    top: 85px;
+    left: 30px;
+    font-family: var(--ff-cta);
+    font-weight: var(--fw-sb);
+    text-align: center;
+    border-radius: 15px;
+  }
+  .sixthbox {
+    width: 350px;
+    height: 160px;
+    margin-top: 8px;
+    background-color: rgb(179, 81, 72);
+    grid-row: 4;
+    justify-self: flex-end;
+    overflow: hidden;
+  }
+
+  .barn6 {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url(/img/diverse.webp);
+    background-position: center;
+    transition: all 1s;
+  }
+  .filter {
+    isolation: isolate;
+  }
+  .filter::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--almost-black);
+    z-index: -1;
+    opacity: 0.3;
+  }
+  .secondbox.filter::after,
+  .fifthbox.filter::after,
+  .sixthbox.filter::after {
+    opacity: 0.4;
+  }
+
+  .sixthbox h2 {
+    position: absolute;
+    /* background-color: #00000085;
+    box-shadow: 0 0 10px 10px #00000085; */
+    top: 70px;
+    left: 120px;
+    font-family: var(--ff-cta);
+    font-weight: var(--fw-sb);
+    text-align: center;
+    border-radius: 15px;
+  }
+
+  @media (min-width: 550px) {
+    .secondbox,
+    .thirdbox,
+    .fourthbox,
+    .fifthbox {
+      width: 240px;
+      height: 178px;
+    }
+    .firstbox,
+    .sixthbox {
+      width: 500px;
+    }
+
+    .secondbox {
+      background-image: url(/img/shop_bonsaibowl_medium.webp);
+    }
+
+    .thirdbox {
+      background-image: url(img/tool_medium.webp);
+    }
+    .fourthbox {
+      background-image: url(img/jord_medium.webp);
+    }
+
+    .fifthbox {
+      background-image: url(img/godning.webp);
+    }
+
+    .firstbox h2 {
+      left: 170px;
+    }
+    .secondbox h2 {
+      left: 50px;
+    }
+
+    .thirdbox h2 {
+      left: 60px;
+    }
+
+    .fourthbox h2 {
+      left: 90px;
+    }
+
+    .fifthbox h2 {
+      left: 70px;
+    }
+
+    .sixthbox h2 {
+      left: 210px;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    img {
+      width: 220px;
+    }
+    h1 {
+      font-size: var(--fs-2w);
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 45px;
+    }
+    .secondbox,
+    .thirdbox,
+    .fourthbox,
+    .fifthbox {
+      width: 295px;
+      height: 300px;
+    }
+
+    .section {
+      padding-bottom: 80px;
+    }
+    main {
+      padding-top: 45px;
+      margin-bottom: -200px;
+    }
+    .firstbox {
+      width: 950px;
+      height: 300px;
+      margin-bottom: 18px;
+    }
+
+    .firstbox h2 {
+      top: 135px;
+      left: 340px;
+    }
+    .secondbox h2 {
+      top: 125px;
+      left: 15px;
+    }
+
+    .thirdbox h2 {
+      top: 125px;
+      left: 30px;
+    }
+
+    .fourthbox h2 {
+      top: 125px;
+      left: 95px;
+    }
+
+    .fifthbox h2 {
+      top: 125px;
+      left: 55px;
+    }
+
+    .sixthbox h2 {
+      top: 125px;
+      left: 220px;
+    }
+    .secondbox {
+      background-image: url(img/shop_bonsaibowl.webp);
+    }
+
+    .thirdbox {
+      position: relative;
+      justify-self: flex-start;
+      left: -148px;
+      background-image: url(img/tools.webp);
+    }
+
+    .fourthbox {
+      position: relative;
+      top: -318px;
+      left: 655px;
+      background-image: url(img/jord.webp);
+    }
+
+    .fifthbox {
+      position: relative;
+      left: -655px;
+      top: 12px;
+    }
+
+    .sixthbox {
+      position: relative;
+      width: 623px;
+      height: 300px;
+      top: -305px;
+    }
+
+    .a_3 {
+      justify-content: start;
+    }
+  }
+</style>

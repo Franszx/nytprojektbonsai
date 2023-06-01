@@ -1,0 +1,123 @@
+---
+import Layout from "../layout/Layout.astro";
+import TreeCard from "../components/TreeCard.astro";
+
+const url = "https://bcjykukoxzsusmoltaky.supabase.co/rest/v1/bonsaitrees";
+const api = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJjanlrdWtveHpzdXNtb2x0YWt5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODUwMTg3ODYsImV4cCI6MjAwMDU5NDc4Nn0.AD5gYYbHDUkLyrwBcKhI3TJgXTSqIj9SSYw9TvhA7kA";
+
+const data = await fetch(url, {
+  method: "GET",
+  headers: {
+    apikey: api,
+  },
+}).then((res) => res.json());
+---
+
+<Layout title="Bonsaitræer">
+  <main>
+    <h1>Bonsaitræer</h1>
+    <img class="gren" src="/img/gren.svg" alt="figur af bonsaigren" />
+    <p>
+      Udforsk den fascinerende verden af bonsaitræer hos os. Vores bonsaitræer er kunstværker skabt med omhu og ekspertise. Fra de fine detaljer i bladene til de smukt formede grene udstråler vores bonsaitræer en unik skønhed og harmoni. Uanset om du
+      er nybegynder eller erfaren, er vi her for at støtte dig.
+    </p>
+    <p>Vi tilbyder ikke kun et bredt udvalg af bonsai-træer, men også vejledning om pleje og vedligeholdelse, så du kan nyde glæden ved at have din egen bonsai.</p>
+    <p>Tag et kig på vores udvalg, og bring naturens æstetik ind i dit hjem eller kontor med en bonsai fra Bonsaihjørnet.dk.</p>
+    <section class="treesection">
+      {
+        data.map((treecard) => {
+          return <TreeCard data={treecard} />;
+        })
+      }
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    display: grid;
+  }
+  h1 {
+    color: var(--green);
+    font-family: var(--ff-cta);
+    font-size: var(--fs-2);
+    font-weight: var(--fw-l);
+    margin-inline: auto;
+    margin-top: var(--space-md);
+  }
+  .gren {
+    width: 120px;
+    margin-block: var(--space-sm);
+    margin-inline: auto;
+  }
+  p {
+    color: var(--almost-black);
+    font-family: var(--ff-text);
+    font-size: var(--fs-p);
+    max-width: 75vw;
+    margin-inline: auto;
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: var(--space-sm);
+  }
+
+  .treesection {
+    margin-block: var(--space-lg);
+    display: grid;
+    gap: var(--space-lg);
+    margin-inline: auto;
+    width: 80vw;
+  }
+  @media (width > 750px) {
+    h1 {
+      font-size: var(--fs-2w);
+      margin-inline: auto;
+      margin-top: var(--space-xl);
+    }
+    .gren {
+      width: 220px;
+      margin-bottom: var(--space-md);
+      margin-top: var(--space-xs);
+      margin-inline: auto;
+    }
+    p {
+      font-family: var(--ff-text);
+      font-size: var(--fs-n);
+      max-width: 75vw;
+      margin-inline: auto;
+      text-align: center;
+      line-height: 1.4;
+      margin-bottom: var(--space-sm);
+    }
+
+    .treesection {
+      margin-block: var(--space-lg);
+      margin-bottom: var(--space-xl);
+      grid-template-columns: 1fr 1fr;
+      max-width: 60vw;
+      column-gap: calc(var(--space-xl) * 1.5);
+      row-gap: var(--space-xl);
+      /* margin-inline: auto; */
+      /* width: 80vw; */
+    }
+  }
+  @media (750px < width < 1175px) {
+    .treesection {
+      max-width: 70vw;
+      column-gap: var(--space-xl);
+      row-gap: var(--space-lg);
+    }
+  }
+
+  @media (500px < width < 750px) {
+    .treesection {
+      grid-template-columns: 1fr 1fr;
+      max-width: 90vw;
+      column-gap: var(--space-lg);
+      row-gap: var(--space-md);
+    }
+    p {
+      font-size: var(--fs-p);
+    }
+  }
+</style>
